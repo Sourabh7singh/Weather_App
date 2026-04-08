@@ -4,7 +4,6 @@ export const DataContext = createContext();
 
 const WeatherData =(props)=>{
     const apikey = process.env.REACT_APP_API_KEY
-    console.log("apikey: ",apikey)
     // eslint-disable-next-line
     const [progress, setProgress] = useState(10);
     const [data, setdata] = useState({location: null,current: null,forecast: null});
@@ -20,8 +19,8 @@ const WeatherData =(props)=>{
         setloading(false);
     }
     useEffect(() => {
-        // fetchdata(`http://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=india&days=3&aqi=yes&alerts=yes`);
-        fetchdata(`http://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=india&days=3&aqi=yes&alerts=yes`);
+        // fetchdata(`https://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=india&days=3&aqi=yes&alerts=yes`);
+        fetchdata(`https://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=india&days=3&aqi=yes&alerts=yes`);
         // eslint-disable-next-line
     }, []);
     return (
